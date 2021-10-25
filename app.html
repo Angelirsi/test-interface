@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Frontend Test</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+	</head>
+	<body>
+		<div class="donations">
+			<header class="box-style">
+				<h1>Donations</h1>
+				<div class="search-wrap">
+					<div class="search">
+						<div class="icon"><img src="img/search.svg" alt=""></div>
+						<input type="search" placeholder="Search" autocomplete="off">
+					</div>
+					<div class="select-wrap">
+						<select class="list">
+							<option>All statuses</option>
+							<option>Success</option>
+							<option>Reject</option>
+						</select>
+						<img class="arrow" src="img/chevron.svg" alt="">
+					</div>
+				</div>
+			</header>
+			<aside>
+				<nav class="box-style">
+					<div>
+						<img src="img/repeat.svg" alt="">
+						<span>Change Amount</span>
+					</div>
+					<div>
+						<img src="img/wallet.svg" alt="">
+						<span>Change Payment Method</span>
+					</div>
+					<div class="active">
+						<img src="img/calendar.svg" alt="">
+						<span>Change Date</span>
+					</div>
+					<div>
+						<img src="img/x-circle.svg" alt="">
+						<span>Cancel Recurring</span>
+					</div>
+				</nav>
+			</aside>
+			<div class="info box-style">
+				<div class="sum-wrap">
+					<div class="sum">
+						<div class="title">
+							<img src="img/dollar-sign.svg" alt="">
+							<span>Donation</span>
+						</div>
+						<div class="amount">
+							<div class="from">€20.60 EUR</div>
+							<div class="to">≈ $22.22 USD</div>
+						</div>
+					</div>
+					<div class="wallet">
+						<span class="id">ID</span>
+						<div class="address">
+							<span id="address">DYHY694Y</span>
+							<img id="copy-btn" class="copy ID" src="img/copy.svg" alt="" title="copy"
+							     onclick="copyText()">
+						</div>
+					</div>
+				</div>
+				<div class="details">
+					<div class="status">
+						<span>Status</span>
+						<div class="success"></div>
+					</div>
+					<div class="supporter">
+						<span>Supporter</span>
+						<a class="link-style" href="">Charlotte Ann</a>
+					</div>
+					<div class="campaign">
+						<span>Campaign</span>
+						<a class="link-style" href="">Workout for water</a>
+					</div>
+				</div>
+			</div>
+			<form class="settings box-style">
+				<div class="tabs">
+					<div class="tab-title">
+						<div class="active js-tab-title" data-id="behavior">Behavior</div>
+						<div class="js-tab-title" data-id="appearance">Appearance</div>
+						<div class="js-tab-title" data-id="custom-fields">Custom Fields</div>
+						<div class="js-tab-title" data-id="questions">Questions</div>
+						<div class="js-tab-title" data-id="url-control">URL Control</div>
+					</div>
+					<div class="tab-body">
+						<div class="active js-tab-content" id="behavior">
+							<div class="line">
+								<span class="name">Designation</span>
+								<div class="select-wrap">
+									<select name="designation">
+										<option value="">Match Checkout Setting</option>
+										<option value="">Match Checkout Setting 2</option>
+										<option value="">Match Checkout Setting 3</option>
+									</select>
+									<img class="arrow" src="img/chevron.svg" alt="">
+								</div>
+							</div>
+							<div class="line goal">
+								<span class="name">Goal</span>
+								<div class="input-wrap">
+									<span>$</span>
+									<input type="number" name="goal" placeholder="0.00">
+								</div>
+								<div class="select-wrap">
+									<select name="currency">
+										<option value="">USD</option>
+										<option value="">USD</option>
+									</select>
+									<img class="arrow" src="img/chevron.svg" alt="">
+								</div>
+							</div>
+							<div class="line radio-wrap">
+								<span class="name">Default Amount</span>
+								<div>
+									<label class="radio">
+										<input name="default-amount" type="radio">
+										<i class="mark"><i></i></i>
+										<span>Match Checkout Setting</span>
+									</label>
+									<label class="radio">
+										<input name="default-amount" type="radio">
+										<i class="mark"><i></i></i>
+										<span>Customize</span>
+									</label>
+								</div>
+							</div>
+							<div class="line">
+								<span class="name"></span>
+								<label class="checkbox">
+									<input type="checkbox">
+									<i></i>
+									<span>Allow donor to change default currency</span>
+								</label>
+							</div>
+							<div class="line snake-wrap">
+								<span class="name">Border size</span>
+								<div class="snake">
+									<input id="border-size"
+									       type="range" min="0" max="3" value="2"
+									       oninput="snakeWidth(this)">
+									<div class="width">
+										<div class="point"></div>
+									</div>
+								</div>
+								<span>2px</span>
+							</div>
+							<div class="line">
+								<span class="name">Border radius</span>
+								<div class="snake">
+									<input type="range"
+									       min="0" max="23" value="15"
+									       oninput="snakeWidth(this)">
+									<div class="width">
+										<div class="point"></div>
+									</div>
+								</div>
+								<span>15px</span>
+							</div>
+						</div>
+						<div class="js-tab-content" id="appearance">content for Appearance tab</div>
+						<div class="js-tab-content" id="custom-fields">content for Custom Fields tab</div>
+						<div class="js-tab-content" id="questions">content for Questions tab</div>
+						<div class="js-tab-content" id="url-control">content for URL Control tab</div>
+					</div>
+				</div>
+				<div class="btn-wrap">
+					<input class="btn green" type="submit" value="Save changes">
+					<input class="btn white" type="reset" value="Cancel">
+				</div>
+			</form>
+		</div>
+		<script src="scripts.js"></script>
+	</body>
+</html>
